@@ -8,6 +8,7 @@ var hbs = require('hbs');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
+var handlebarHelpers = require(path.join(__dirname,'views', 'helpers'));
 
 var app = express();
 
@@ -15,6 +16,7 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 hbs.registerPartials(path.join(__dirname,'views', 'partials'));
+hbs.registerHelper('shortenForHome',handlebarHelpers.shortenForHome);
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
