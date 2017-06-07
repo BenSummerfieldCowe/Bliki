@@ -6,3 +6,26 @@ body {
 a {
   color: #00B7FF;
 }
+
+.post {
+  margin-bottom: 5%;
+  border-style: inset;
+  border-color: #6c6c6c;
+  border-bottom-color: black;
+}
+
+.content {
+  text-align: center;
+  white-space: pre-wrap;
+}
+
+.author {
+  font-size: small;
+  text-align: left;
+}
+
+.timestamp {
+  font-size: x-small;
+  font-style: italic;
+  text-align: right;
+}
