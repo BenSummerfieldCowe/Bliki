@@ -15,7 +15,8 @@ function createURLForPost(timestamp,title) {
   //We need to actualy check this date
   timestamp = timestamp.split('T')[0];
   //this is super messy
-  return timestamp.split('-')[0] + '/' + timestamp.split('-')[1] + '/' + timestamp.split('-')[2] + '/' + title.replace(/ /g, '_').toLowerCase();
+  return 'post/'+title.replace(/ /g, '_').toLowerCase();
+  //return timestamp.split('-')[0] + '/' + timestamp.split('-')[1] + '/' + timestamp.split('-')[2] + '/' + title.replace(/ /g, '_').toLowerCase();
 }
 
 module.exports = {
