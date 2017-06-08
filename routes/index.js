@@ -6,9 +6,7 @@ var getPosts = require('../lib/posts').getPosts();
 router.get('/', function(req, res, next) {
   var renderData={};
   var posts={};
-  posts=getPosts;
-  //Hard coding dummy posts until db setup
-  
+  posts=getPosts;  
   renderData.posts=posts;
   renderData.title='Express';
   res.render('index', renderData);
