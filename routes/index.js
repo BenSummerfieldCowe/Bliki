@@ -9,15 +9,12 @@ router.get('/:pageNo([0-9]+)?', function(req, res, next) {
   var posts={};
   var postsForPage = getPosts(pageNo);
   renderData.maxPage = postsForPage.maxPage
-  console.log(postsForPage.maxPage)
   renderData.posts=postsForPage.posts;
   renderData.pageNo = pageNo;
   renderData.title='Express';
   if (postsForPage.err){
-    console.log('error')
     next(postsForPage.err);
   } else {
-    console.log('index')
     res.render('index', renderData);
   }
 });
