@@ -14,7 +14,22 @@ function createURLForPost(title) {
   return title.replace(/ /g, '_').toLowerCase();
 }
 
+function pagination(current,max) {
+  if(max===1) {
+    return
+  }
+  var pagination = "<a href='/'>1</a>"
+  var i;
+  //TODO clean up better format, limit amount of pages, show surrunding numbers, i.e 1 2 3 4 or 1 .. 4 5 6 .. 10 etc
+  for (i=2; i<max; i++) {
+     pagination += " <a href='"+i+"'>"+i+"</a>"
+   }
+   pagination += " <a href='"+max+"'>"+max+"</a>"
+  return pagination;
+}
+
 module.exports = {
   shortenForHome: shortenForHome,
-  createURLForPost: createURLForPost
+  createURLForPost: createURLForPost,
+  pagination: pagination
 };
