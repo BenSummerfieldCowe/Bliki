@@ -6,7 +6,6 @@ var getPostsForPage = require('../lib/posts').getPostsForPage;
 router.get('/:pageNo([0-9]+)?', function(req, res, next) {
   var pageNo = req.params.pageNo ? req.params.pageNo : 1;
   var renderData={};
-  var posts={};
   var postsForPage = getPostsForPage(pageNo);
   renderData.maxPage = postsForPage.maxPage
   renderData.posts=postsForPage.posts;

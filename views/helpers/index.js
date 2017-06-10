@@ -21,8 +21,8 @@ function pagination(current, max) {
   current = parseInt(current,10);
   var makeLink = function (page) {
     if (current === page) {
-      return "<a class='current' href='" + page + "'>" + page + "</a> "
-    } else return "<a href='" + page + "'>" + page + "</a> "
+      return "<a class='current' href='/" + page + "'>" + page + "</a> "
+    } else return "<a href='/" + page + "'>" + page + "</a> "
   }
   var pagination = makeLink(1);
   var j = current - 2;
