@@ -8,6 +8,7 @@ router.get('/:title/', function(req, res, next) {
   renderData.post=getPostByTitle(req.params.title);
   if (!renderData.post) {
    next()
+   return;
  }
  else {
     res.render('post', renderData);

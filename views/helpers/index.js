@@ -18,7 +18,7 @@ function pagination(current, max) {
   if (max === 1) {
     return
   }
-  current = parseInt(current);
+  current = parseInt(current,10);
   var makeLink = function (page) {
     if (current === page) {
       return "<a class='current' href='" + page + "'>" + page + "</a> "

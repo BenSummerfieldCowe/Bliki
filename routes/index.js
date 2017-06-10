@@ -14,6 +14,7 @@ router.get('/:pageNo([0-9]+)?', function(req, res, next) {
   renderData.title='Express';
   if (postsForPage.err){
     next(postsForPage.err);
+    return;
   } else {
     res.render('index', renderData);
   }
