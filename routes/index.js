@@ -1,13 +1,13 @@
 var express = require('express');
 var router = express.Router();
-var getPosts = require('../lib/posts').getPosts;
+var getPostsForPage = require('../lib/posts').getPostsForPage;
 
 /* GET home page. */
 router.get('/:pageNo([0-9]+)?', function(req, res, next) {
   var pageNo = req.params.pageNo ? req.params.pageNo : 1;
   var renderData={};
   var posts={};
-  var postsForPage = getPosts(pageNo);
+  var postsForPage = getPostsForPage(pageNo);
   renderData.maxPage = postsForPage.maxPage
   renderData.posts=postsForPage.posts;
   renderData.pageNo = pageNo;
