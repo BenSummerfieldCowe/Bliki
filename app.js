@@ -19,6 +19,7 @@ hbs.registerPartials(path.join(__dirname,'views', 'partial'));
 hbs.registerHelper('shortenForHome',handlebarHelpers.shortenForHome);
 hbs.registerHelper('createURLForPost',handlebarHelpers.createURLForPost);
 hbs.registerHelper('pagination' ,handlebarHelpers.pagination);
+hbs.registerHelper('linkKeywords',handlebarHelpers.linkKeywords);
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
