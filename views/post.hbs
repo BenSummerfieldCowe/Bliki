@@ -1,6 +1,6 @@
 <div class="post">
     <h2>{{post.title}}</h2>
     <div class="author">{{post.author}}</div>
-    <div class="content">{{post.content}} </div>
+    <div class="content">{{#linkKeywords post.content}} {{/linkKeywords}}</div>
     <div class="timestamp">{{post.timeStamp}}</div>
 </div>
