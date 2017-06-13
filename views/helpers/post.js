@@ -10,7 +10,7 @@ function linkKeywords(content) {
   for(i=0; i < keywords.length; i++) {
     content = content.replace(new RegExp('('+keywords[i]+')','ig'),
       function(key) {
-        return "<a class='keyword' href='/wiki/"+key.replace(/ /g,'_')+"'>"+key+"</a>";
+        return "<a class='keyword' href='/wiki/"+key.replace(/ /g,'_').toLowerCase()+"'>"+key+"</a>";
       }
     )
   }
