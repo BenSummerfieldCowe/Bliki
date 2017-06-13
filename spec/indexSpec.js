@@ -21,10 +21,17 @@ describe("The Home page", function () {
     const browser = new Browser();
     it("can be successfully requested ", function(done) {
         browser.visit('/',function(err) {
+        expect(browser.assert.success());    
         expect(browser.assert.success());
-    });
-    expect(browser.assert.success());
         done();
+      })
+    });
+  //This needs expanding a bunch
+    it("returns can be successfully requested ", function(done) {
+        request.get(base_url, function(err,res) {
+            expect(res.statusCode).toBe(200);
+            done();
+        })
     });
 
     // it("displays posts", function(done) {

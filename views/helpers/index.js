@@ -1,8 +1,9 @@
 
 function shortenForHome(content) {
   //def clean this up
-  if (content.length > 500) {
-    return content.substring(0, content.substring(500).indexOf(" ") + 500) + ' ...';
+  var maxPostLength = 500;
+  if (content.length > maxPostLength) {
+    return content.substring(0, content.substring(maxPostLength).indexOf(" ") + maxPostLength) + ' ...';
   }
   return content
 }
