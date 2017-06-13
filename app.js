@@ -11,7 +11,7 @@ var post = require('./routes/posts');
 var handlebarHelpers = require(path.join(__dirname,'views', 'helpers'));
 //Do this to allow spliting helpers up or put all in one file?
 var handlebarPostHelpers = require(path.join(__dirname,'views', 'helpers','post.js'));
-
+process.title = "bliki";
 var app = express();
 
 // view engine setup

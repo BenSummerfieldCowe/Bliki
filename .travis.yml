@@ -7,3 +7,10 @@ cache:
 branches:
   only:
     - master
+before_script:
+   - npm start
+   - sleep 3
+script:
+   - npm test
+after_script
+   - npm stop
