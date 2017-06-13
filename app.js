@@ -9,6 +9,8 @@ var hbs = require('hbs');
 var index = require('./routes/index');
 var post = require('./routes/posts');
 var handlebarHelpers = require(path.join(__dirname,'views', 'helpers'));
+//Do this to allow spliting helpers up or put all in one file?
+var handlebarPostHelpers = require(path.join(__dirname,'views', 'helpers','post.js'));
 
 var app = express();
 
@@ -19,7 +21,7 @@ hbs.registerPartials(path.join(__dirname,'views', 'partial'));
 hbs.registerHelper('shortenForHome',handlebarHelpers.shortenForHome);
 hbs.registerHelper('createURLForPost',handlebarHelpers.createURLForPost);
 hbs.registerHelper('pagination' ,handlebarHelpers.pagination);
-hbs.registerHelper('linkKeywords',handlebarHelpers.linkKeywords);
+hbs.registerHelper('linkKeywords',handlebarPostHelpers.linkKeywords);
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));

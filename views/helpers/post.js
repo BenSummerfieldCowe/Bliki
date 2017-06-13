@@ -14,6 +14,7 @@ function linkKeywords(content) {
       }
     )
   }
+  return content;
 }
 
 module.exports = {
