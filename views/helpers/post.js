@@ -4,7 +4,7 @@
  * @param content the body of the post
  */
 function linkKeywords(content) {
-  //TODO get keywords, change so not hard coded here
+  //change to get keywords, change so not hard coded here
   var keywords = ['first','the keyword', 'bigTag'];
   var i;
   for(i=0; i < keywords.length; i++) {

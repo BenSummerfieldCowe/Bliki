@@ -1,4 +1,3 @@
-var posts = require('../lib/posts.js');
 var request = require("request");
 
   var base_url = "http://localhost:3000"
@@ -6,7 +5,7 @@ var request = require("request");
 describe("The Home page", function () { 
   //This needs expanding a bunch
     it("returns can be successfully requested ", function(done) {
-        request.get(base_url, function(err,res,body) {
+        request.get(base_url, function(err,res) {
             expect(res.statusCode).toBe(200);
             done();
         })
