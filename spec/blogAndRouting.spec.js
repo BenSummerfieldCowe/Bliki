@@ -1,6 +1,6 @@
 'use strict'
 var Browser = require("zombie");
-// var textAssertionOnPage = require("./testHelper.js").textAssertionOnPage;
+var textAssertionOnPage = require("./testHelper.js").textAssertionOnPage;
 
 //TODO add mocking/spys as it wont always use the local
  describe("The blog page", function () { 
@@ -79,11 +79,11 @@ describe("The individual post page", () => {
 
 });
 
-var textAssertionOnPage = (browser, selector, assertion) => {
-  var element = browser.querySelector(selector);
-  if(element) {
-    expect(element.textContent).toBe(assertion);
-  } else {
-    expect(false).toEqual(true, `element with selector ${selector} not found on page`);
-  }
-};
+// var textAssertionOnPage = (browser, selector, assertion) => {
+//   var element = browser.querySelector(selector);
+//   if(element) {
+//     expect(element.textContent).toBe(assertion);
+//   } else {
+//     expect(false).toEqual(true, `element with selector ${selector} not found on page`);
+//   }
+// };

@@ -3,7 +3,7 @@ module.exports = {
   textAssertionOnPage: textAssertionOnPage
 };
 
-var textAssertionOnPage = (browser, selector, assertion) => {
+function textAssertionOnPage (browser, selector, assertion)  {
   var element = browser.querySelector(selector);
   if(element) {
     expect(element.textContent).toBe(assertion);
