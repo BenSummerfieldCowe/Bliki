@@ -10,4 +10,4 @@ function textAssertionOnPage (browser, selector, assertion)  {
   } else {
     expect(false).toEqual(true, `element with selector ${selector} not found on page`);
   }
-};
+}
