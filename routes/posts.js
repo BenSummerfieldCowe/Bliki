@@ -5,14 +5,14 @@ var getPostByTitle = require('../lib/posts').getPostByTitle;
 /* GET individual blog page. */
 router.get('/:title/', function(req, res, next) {
   var renderData={};
-  renderData.post=getPostByTitle(req.params.title);
-  if (!renderData.post) {
-   next()
-   return;
- }
- else {
-    res.render('post', renderData);
- }
+  getPostByTitle(req.params.title, (err,post) => {
+    if(err) {
+      next();
+    } else {
+      renderData.post=post;
+      res.render('post', renderData);
+    }
+  });
 });
 
 module.exports = router;
