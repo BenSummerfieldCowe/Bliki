@@ -16,7 +16,7 @@ var textAssertionOnPage = require("./testHelper.js").textAssertionOnPage;
 
     it("displays posts", (done) => {
       browser.visit('http://localhost:3000/',() => {
-        textAssertionOnPage(browser,".title","The first post");
+        textAssertionOnPage(browser,".title","The long one10");
       done();
       });
     });
@@ -31,7 +31,7 @@ var textAssertionOnPage = require("./testHelper.js").textAssertionOnPage;
 
    it("can be display posts for later pages", (done) => {
      browser.visit('http://localhost:3000/2',() => {
-       textAssertionOnPage(browser,".title","The long one");
+       textAssertionOnPage(browser,".title","The long one8");
        done();
      })
    });
