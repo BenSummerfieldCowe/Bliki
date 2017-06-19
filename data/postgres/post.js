@@ -15,8 +15,6 @@ const Post = sequelize.define('posts', {
     tags:{type: Sequelize.STRING}
 });
 
-sequelize.sync().then(() => {
-    console.log('Postgre connection ready');
-});
+sequelize.sync();
 
 module.exports = Post;

@@ -11,7 +11,7 @@ router.get('/:pageNo([0-9]+)?', function (req, res, next) {
   renderData.title = 'Express';
   getPostsForPage(pageNo, (err, posts, maxPage) => {
     if (err) {
-      var err = new Error('Not Found');
+      err = new Error('Not Found');
       err.status = 404;
       next(err);
     } else {
