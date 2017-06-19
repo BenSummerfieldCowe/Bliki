@@ -1,23 +1,22 @@
 const Sequelize = require('sequelize');
 const database = 'bliki',
-    host ='localhostSOMETHING', 
-    usernam='admin', 
-    password ='password';
+    host ='localhost', 
+    username='postgres', 
+    password ='admin';
 const sequelize = new Sequelize(database,username,password, {
     host: host,
     dialect: 'postgres'
 });
 
-const User = sequelize.define('post', {
+const Post = sequelize.define('posts', {
     title:{ type: Sequelize.STRING, primaryKey:true},
-    content: {type: Sequelize.STRING},
+    content: {type: Sequelize.TEXT},
     author:{type:  Sequelize.STRING},
-    tags:{type: Sequelize.STRING},
-    timeStamp:{type: Sequelize.DATE} //bigint?
+    tags:{type: Sequelize.STRING}
 });
 
 sequelize.sync().then(() => {
     console.log('Postgre connection ready');
 });
 
-module.exports = USER;
+module.exports = Post;
