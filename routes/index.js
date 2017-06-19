@@ -1,3 +1,4 @@
+'use strict'
 var express = require('express');
 var router = express.Router();
 var getPostsForPage = require('../lib/posts').getPostsForPage;
@@ -6,17 +7,26 @@ var getPostsForPage = require('../lib/posts').getPostsForPage;
 router.get('/:pageNo([0-9]+)?', function(req, res, next) {
   var pageNo = req.params.pageNo ? req.params.pageNo : 1;
   var renderData={};
-  var postsForPage = getPostsForPage(pageNo);
-  renderData.maxPage = postsForPage.maxPage
-  renderData.posts=postsForPage.posts;
+  getPostsForPage(pageNo,(err,posts,maxPage)=> {
+    if(err) {
+      //goto error page
+          // postsForPage.err = new Error('Not Found');
+    // postsForPage.err.status = 404;
+    } else {
+      renderData.maxPage = maxPage;
+      renderData.posts = posts;
+    }
+  });
+  // renderData.maxPage = postsForPage.maxPage
+  // renderData.posts=postsForPage.posts;
   renderData.pageNo = pageNo;
   renderData.title='Express';
-  if (postsForPage.err){
-    next(postsForPage.err);
-    return;
-  } else {
+//  if (postsForPage.err){
+    // next(postsForPage.err);
+    // return;
+  // } else {
     res.render('index', renderData);
-  }
+  // }
 });
 
 module.exports = router;
