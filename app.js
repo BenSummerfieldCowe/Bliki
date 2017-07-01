@@ -8,6 +8,8 @@ var hbs = require('hbs');
 
 var index = require('./routes/index');
 var post = require('./routes/posts');
+var newPost = require('./routes/newPost');
+var api = require('./routes/api');
 var handlebarHelpers = require(path.join(__dirname,'views', 'helpers'));
 //Do this to allow spliting helpers up or put all in one file?
 var handlebarPostHelpers = require(path.join(__dirname,'views', 'helpers','post.js'));
@@ -31,6 +33,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use('/add',newPost);
+app.use('/api', api);
 app.use('/', index);
 app.use('/', post);
 

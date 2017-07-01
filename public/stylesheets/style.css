@@ -37,3 +37,8 @@ a {
   font-style: italic;
   text-align: right;
 }
+
+#titleError {
+  visibility:hidden;
+  color: red;
+}

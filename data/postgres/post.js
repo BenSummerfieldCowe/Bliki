@@ -13,6 +13,7 @@ const Post = sequelize.define('posts', {
     content: {type: Sequelize.TEXT},
     author:{type:  Sequelize.STRING},
     tags:{type: Sequelize.STRING}
+    // ,updatedAt:false
 });
 
 sequelize.sync();
